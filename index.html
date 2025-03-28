@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schident - HITSZ Undergraduate Admissions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        // Custom Tailwind configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Poppins', 'ui-sans-serif', 'system-ui'],
+                    },
+                    colors: {
+                        'hitsz-blue': '#0066CC',
+                        'hitsz-red': '#CC0000'
+                    }
+                }
+            }
+        }
+
+        // Interactive functions
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function openApplicationModal() {
+            document.getElementById('application-modal').classList.remove('hidden');
+        }
+
+        function closeApplicationModal() {
+            document.getElementById('application-modal').classList.add('hidden');
+        }
+
+        function toggleProgramsDropdown() {
+            const dropdown = document.getElementById('programs-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0066CC 0%, #CC0000 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4 lg:px-16">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold text-hitsz-blue flex items-center justify-between">
+                    <img src="logo.png" alt="logo" class="" width="50px" srcset="">Schident
+                </span>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="#" class="text-gray-700 hover:text-hitsz-blue transition">Home</a>
+                <div class="relative">
+                    <button onclick="toggleProgramsDropdown()" class="text-gray-700 hover:text-hitsz-blue transition flex items-center">
+                        Programs <i class="ri-arrow-down-s-line ml-1"></i>
+                    </button>
+                    <div id="programs-dropdown" class="hidden absolute bg-white shadow-lg rounded-lg mt-2 w-64 p-4">
+                        <h4 class="font-bold mb-2 text-hitsz-blue">Undergraduate Programs</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Science</a>
+                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Computer Science</a>
+                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Robot Engineering</a>
+                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Mechanical Design</a>
+                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Electrical Engineering</a>
+                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Civil Engineering</a>
+                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Liberal Arts</a>
+                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Architecture</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="text-gray-700 hover:text-hitsz-blue transition">Admission Requirements</a>
+                <a href="#" class="text-gray-700 hover:text-hitsz-blue transition">About HITSZ</a>
+                <button onclick="openApplicationModal()" class="bg-hitsz-red text-white px-5 py-2 rounded-full hover:bg-red-700 transition">
+                    Apply Now
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="lg:hidden">
+                <button onclick="toggleMenu()" class="text-hitsz-blue">
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white">
+            <!-- Mobile menu content would be similar to desktop menu -->
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-24 container mx-auto px-4 lg:px-16 flex flex-col-reverse lg:flex-row items-center">
+        <div class="w-full lg:w-1/2 space-y-6">
+            <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+                🌟 Your Gateway to HITSZ: <br/>Global Education Starts Here
+            </h1>
+            <p class="text-gray-600 text-lg">
+                Comprehensive admission support for international students seeking world-class education at Harbin Institute of Technology Shenzhen Campus
+            </p>
+            <div class="flex items-center space-x-4">
+                <button onclick="openApplicationModal()" class="bg-hitsz-blue text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                    Start Your Application
+                </button>
+            </div>
+        </div>
+        <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+            <img src="/api/placeholder/500/500" alt="HITSZ Campus" class="rounded-lg shadow-xl"/>
+        </div>
+    </header>
+ <!-- Admission Requirements -->
+ <section class="container mx-auto px-4 lg:px-16 py-16">
+    <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Admission Requirements</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-hitsz-blue">Document Requirements</h3>
+            <ul class="space-y-4 text-gray-700">
+                <li class="flex items-start">
+                    <i class="ri-file-text-line mr-3 text-hitsz-red text-xl"></i>
+                    High school diploma or expected graduation certificate
+                </li>
+                <li class="flex items-start">
+                    <i class="ri-file-text-line mr-3 text-hitsz-red text-xl"></i>
+                    Official transcripts
+                </li>
+                <li class="flex items-start">
+                    <i class="ri-global-line mr-3 text-hitsz-red text-xl"></i>
+                    Language proficiency certificates (TOEFL/IELTS)
+                </li>
+                <li class="flex items-start">
+                    <i class="ri-shield-check-line mr-3 text-hitsz-red text-xl"></i>
+                    Non-criminal record report
+                </li>
+            </ul>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="text-2xl font-bold mb-6 text-hitsz-blue">Additional Requirements</h3>
+            <ul class="space-y-4 text-gray-700">
+                <li class="flex items-start">
+                    <i class="ri-medical-line mr-3 text-hitsz-red text-xl"></i>
+                    Foreigner Physical Examination Form
+                </li>
+                <li class="flex items-start">
+                    <i class="ri-bank-card-line mr-3 text-hitsz-red text-xl"></i>
+                    Bank Statement (minimum CNY 20,000)
+                </li>
+                <li class="flex items-start">
+                    <i class="ri-trophy-line mr-3 text-hitsz-red text-xl"></i>
+                    Proof of academic achievements (optional)
+                </li>
+                <li class="flex items-start">
+                    <i class="ri-checkbox-line mr-3 text-hitsz-red text-xl"></i>
+                    Payment receipt of application fee
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Undergraduate Programs -->
+    <section class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4 lg:px-16">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Undergraduate Programs</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
+                    <i class="ri-flask-line text-5xl text-hitsz-blue mb-4"></i>
+                    <h4 class="font-bold">Science</h4>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
+                    <i class="ri-computer-line text-5xl text-hitsz-blue mb-4"></i>
+                    <h4 class="font-bold">Computer Science</h4>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
+                    <i class="ri-robot-line text-5xl text-hitsz-blue mb-4"></i>
+                    <h4 class="font-bold">Robot Engineering</h4>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
+                    <i class="ri-tools-line text-5xl text-hitsz-blue mb-4"></i>
+                    <h4 class="font-bold">Mechanical Design</h4>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
+                    <i class="ri-lightbulb-line text-5xl text-hitsz-blue mb-4"></i>
+                    <h4 class="font-bold">Electrical Engineering</h4>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
+                    <i class="ri-building-line text-5xl text-hitsz-blue mb-4"></i>
+                    <h4 class="font-bold">Civil Engineering</h4>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
+                    <i class="ri-book-open-line text-5xl text-hitsz-blue mb-4"></i>
+                    <h4 class="font-bold">Liberal Arts</h4>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
+                    <i class="ri-home-line text-5xl text-hitsz-blue mb-4"></i>
+                    <h4 class="font-bold">Architecture</h4>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-4">All Programs Taught in English</p>
+                <button onclick="openApplicationModal()" class="bg-hitsz-red text-white px-8 py-3 rounded-full hover:bg-red-700 transition">
+                    Explore Programs
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarship Benefits -->
+    <section class="container mx-auto px-4 lg:px-16 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition">
+                <i class="ri-book-open-line text-5xl text-red-600 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Full College Care</h3>
+                <p class="text-gray-600">Comprehensive support for your entire educational journey</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition">
+                <i class="ri-bus-line text-5xl text-red-600 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Transportation Costs</h3>
+                <p class="text-gray-600">Financial aid for travel and transportation expenses</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition">
+                <i class="ri-computer-line text-5xl text-red-600 mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Learning Equipment</h3>
+                <p class="text-gray-600">Support for educational tools and technology</p>
+            </div>
+        </div>
+    </section>
+
+     <!-- Services Offered -->
+     <section class="container mx-auto px-4 lg:px-16 py-16">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Our Comprehensive Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition hover:scale-105">
+                <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="ri-search-line text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">Program Matching</h3>
+                <p class="text-gray-600">Finding the right program for your unique profile</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition hover:scale-105">
+                <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="ri-file-text-line text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">Application Support</h3>
+                <p class="text-gray-600">Complete guidance and guarantee of admission</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition hover:scale-105">
+                <div class="bg-red-100 text-red-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="ri-customer-service-line text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">On-Ground Support</h3>
+                <p class="text-gray-600">Pick-up, registration, and bank account assistance</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarship Categories -->
+    <section class="container mx-auto px-4 lg:px-16 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">Categories Of Each Scholarship</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition">
+                <i class="ri-government-line text-5xl text-red-600 mb-4"></i>
+                <h4 class="font-bold">Government</h4>
+                <p class="text-gray-600 text-sm mt-2">Official Government Scholarships</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition">
+                <i class="ri-building-line text-5xl text-red-600 mb-4"></i>
+                <h4 class="font-bold">Private</h4>
+                <p class="text-gray-600 text-sm mt-2">Corporate Sponsored Scholarships</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition">
+                <i class="ri-global-line text-5xl text-red-600 mb-4"></i>
+                <h4 class="font-bold">International</h4>
+                <p class="text-gray-600 text-sm mt-2">Global Study Opportunities</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl transition">
+                <i class="ri-team-line text-5xl text-red-600 mb-4"></i>
+                <h4 class="font-bold">Organizational</h4>
+                <p class="text-gray-600 text-sm mt-2">Non-Profit Scholarship Programs</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Join Section -->
+    <section class="bg-red-600 text-white py-16">
+        <div class="container mx-auto px-4 lg:px-16 text-center">
+            <h2 class="text-3xl font-bold mb-6">For Those Who Plan to Join</h2>
+            <p class="text-lg mb-8">Prepare for your educational journey with comprehensive support and guidance</p>
+            <button onclick="openApplicationModal()" class="bg-white text-red-600 px-8 py-3 rounded-full hover:bg-gray-100 transition">
+                Join Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Student Testimonials -->
+    <section class="container mx-auto px-4 lg:px-16 py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">What Our Student Says</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <img src="/api/placeholder/50/50" alt="Student" class="rounded-full mr-4"/>
+                    <div>
+                        <h4 class="font-bold">Alex Smith</h4>
+                        <div class="text-yellow-400">★★★★★</div>
+                    </div>
+                </div>
+                <p class="text-gray-600">"Schident transformed my educational journey and made my dreams possible!"</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <img src="/api/placeholder/50/50" alt="Student" class="rounded-full mr-4"/>
+                    <div>
+                        <h4 class="font-bold">Emma Johnson</h4>
+                        <div class="text-yellow-400">★★★★★</div>
+                    </div>
+                </div>
+                <p class="text-gray-600">"The scholarship process was incredibly smooth and supportive."</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center mb-4">
+                    <img src="/api/placeholder/50/50" alt="Student" class="rounded-full mr-4"/>
+                    <div>
+                        <h4 class="font-bold">Michael Chen</h4>
+                        <div class="text-yellow-400">★★★★★</div>
+                    </div>
+                </div>
+                <p class="text-gray-600">"Grateful for the comprehensive support from Schident's team."</p>
+            </div>
+        </div>
+    </section>
+    <section class="container mx-auto px-4 lg:px-16 py-16">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Our Scholarship Process</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition hover:scale-105">
+                <div class="bg-red-100 text-red-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="ri-file-text-line text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">Application</h3>
+                <p class="text-gray-600">Submit your detailed scholarship application</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition hover:scale-105">
+                <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="ri-search-line text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">Review</h3>
+                <p class="text-gray-600">Our team carefully evaluates each application</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition hover:scale-105">
+                <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="ri-star-line text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">Selection</h3>
+                <p class="text-gray-600">Top candidates are selected based on merit</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg text-center transform transition hover:scale-105">
+                <div class="bg-purple-100 text-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="ri-gift-line text-3xl"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-2">Scholarship</h3>
+                <p class="text-gray-600">Receive full scholarship support</p>
+            </div>
+        </div>
+    </section>
+
+      <!-- Why HITSZ -->
+      <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 lg:px-16">
+            <h2 class="text-4xl font-bold text-center mb-12">Why Choose HITSZ?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <i class="ri-medal-line text-5xl mb-4 block text-center"></i>
+                    <h3 class="font-bold text-xl mb-2">Top-Tier University</h3>
+                    <p>One of China's most prestigious institutions for academic excellence</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <i class="ri-microscope-line text-5xl mb-4 block text-center"></i>
+                    <h3 class="font-bold text-xl mb-2">Cutting-Edge Research</h3>
+                    <p>World-class research opportunities in engineering, science, and technology</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl text-center">
+                    <i class="ri-brain-line text-5xl mb-4 block text-center"></i>
+                    <h3 class="font-bold text-xl mb-2">Global Environment</h3>
+                    <p>Perfect ecosystem for academic and personal growth</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Success Stories -->
+     <section class="container mx-auto px-4 lg:px-16 py-16">
+        <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Student Success Stories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white border-2 border-gray-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                <div class="flex items-center mb-4">
+                    <img src="/api/placeholder/60/60" alt="Student" class="rounded-full mr-4 border-2 border-blue-100"/>
+                    <div>
+                        <h4 class="font-bold text-lg">Alex Chen</h4>
+                        <p class="text-gray-500 text-sm">Computer Science</p>
+                    </div>
+                </div>
+                <p class="italic text-gray-600">"The admission coaching was instrumental in my HITSZ journey. Couldn't be happier!"</p>
+                <div class="mt-4 flex items-center">
+                    <i class="ri-award-line text-blue-600 mr-2"></i>
+                    <span>Computer Science Department</span>
+                </div>
+            </div>
+            <div class="bg-white border-2 border-gray-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                <div class="flex items-center mb-4">
+                    <img src="/api/placeholder/60/60" alt="Student" class="rounded-full mr-4 border-2 border-green-100"/>
+                    <div>
+                        <h4 class="font-bold text-lg">Emily Wong</h4>
+                        <p class="text-gray-500 text-sm">Robotics Engineering</p>
+                    </div>
+                </div>
+                <p class="italic text-gray-600">"The support was comprehensive and made my transition seamless."</p>
+                <div class="mt-4 flex items-center">
+                    <i class="ri-award-line text-green-600 mr-2"></i>
+                    <span>Robotics Research Lab</span>
+                </div>
+            </div>
+            <div class="bg-white border-2 border-gray-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition">
+                <div class="flex items-center mb-4">
+                    <img src="/api/placeholder/60/60" alt="Student" class="rounded-full mr-4 border-2 border-red-100"/>
+                    <div>
+                        <h4 class="font-bold text-lg">Marcus Liu</h4>
+                        <p class="text-gray-500 text-sm">AI & Machine Learning</p>
+                    </div>
+                </div>
+                <p class="italic text-gray-600">"From application to arrival, every step was professionally guided."</p>
+                <div class="mt-4 flex items-center">
+                    <i class="ri-award-line text-red-600 mr-2"></i>
+                    <span>AI Innovation Center</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4 lg:px-16 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h4 class="font-bold mb-4 text-red-500">Services</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-red-500">Scholarships</a></li>
+                    <li><a href="#" class="hover:text-red-500">Mentorship</a></li>
+                    <li><a href="#" class="hover:text-red-500">Learning Resources</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-red-500">Information</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-red-500">About Us</a></li>
+                    <li><a href="#" class="hover:text-red-500">FAQ</a></li>
+                    <li><a href="#" class="hover:text-red-500">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-red-500">Company</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-red-500">Careers</a></li>
+                    <li><a href="#" class="hover:text-red-500">Blog</a></li>
+                    <li><a href="#" class="hover:text-red-500">Press</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-red-500">Get In Touch</h4>
+                <p>Email: support@schident.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <div class="mt-4 flex space-x-4">
+                    <a href="#" class="text-white hover:text-red-500"><i class="ri-facebook-line"></i></a>
+                    <a href="#" class="text-white hover:text-red-500"><i class="ri-twitter-line"></i></a>
+                    <a href="#" class="text-white hover:text-red-500"><i class="ri-linkedin-line"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Modal -->
+    <div id="application-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white w-11/12 md:w-1/2 p-8 rounded-lg">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold">Scholarship Application</h2>
+                <button onclick="closeApplicationModal()" class="text-gray-600 hover:text-red-600">
+                    <i class="ri-close-line text-2xl"></i>
+                </button>
+            </div>
+            <form class="space-y-4">
+                <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg"/>
+                <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg"/>
+                <input type="tel" placeholder="Your Phone Number" class="w-full p-3 border rounded-lg"/>
+                <textarea placeholder="Your Message and Goals" class="w-full p-3 border rounded-lg" rows="4"></textarea>
+                <div class="text-center">
+                    <a href="mailto:epicstudent57@gmail.com" class="w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 inline-block">
+                        Send Message
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
