@@ -49,76 +49,35 @@
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white shadow-md">
-        <div class="container mx-auto flex justify-between items-center p-4 lg:px-16">
+     <!-- Navigation -->
+     <nav class="bg-white shadow-md p-4">
+        <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center">
-                <span class="text-2xl font-bold text-hitsz-blue flex items-center justify-between">
-                    <img src="logo.png" alt="logo" class="" width="50px" srcset="">Schident
-                </span>
+                <img src="/api/placeholder/50/50" alt="Schident Logo" class="mr-4">
+                <h1 class="text-2xl font-bold text-hitsz-blue">Schident</h1>
             </div>
-            
-            <!-- Desktop Navigation -->
-            <div class="hidden lg:flex space-x-6 items-center">
-                <a href="#" class="text-gray-700 hover:text-hitsz-blue transition">Home</a>
-                <div class="relative">
-                    <button onclick="toggleProgramsDropdown()" class="text-gray-700 hover:text-hitsz-blue transition flex items-center">
-                        Programs <i class="ri-arrow-down-s-line ml-1"></i>
-                    </button>
-                    <div id="programs-dropdown" class="hidden absolute bg-white shadow-lg rounded-lg mt-2 w-64 p-4">
-                        <h4 class="font-bold mb-2 text-hitsz-blue">Undergraduate Programs</h4>
-                        <div class="grid grid-cols-2 gap-2">
-                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Science</a>
-                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Computer Science</a>
-                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Robot Engineering</a>
-                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Mechanical Design</a>
-                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Electrical Engineering</a>
-                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Civil Engineering</a>
-                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Liberal Arts</a>
-                            <a href="#" class="text-gray-700 hover:text-hitsz-blue">Architecture</a>
-                        </div>
-                    </div>
-                </div>
-                <a href="#" class="text-gray-700 hover:text-hitsz-blue transition">Admission Requirements</a>
-                <a href="#" class="text-gray-700 hover:text-hitsz-blue transition">About HITSZ</a>
-                <button onclick="openApplicationModal()" class="bg-hitsz-red text-white px-5 py-2 rounded-full hover:bg-red-700 transition">
+            <div class="space-x-6">
+                <a href="index.html" class="text-gray-800 hover:text-hitsz-blue">Home</a>
+                <a href="programs.html" class="text-gray-800 hover:text-hitsz-blue">Programs</a>
+                <a href="requirements.html" class="text-gray-800 hover:text-hitsz-blue">Requirements</a>
+                <a href="about-hitsz.html" class="text-gray-800 hover:text-hitsz-blue">About HITSZ</a>
+                <button onclick="navigateTo('application-form.html')" class="bg-hitsz-red text-white px-4 py-2 rounded-full">
                     Apply Now
                 </button>
             </div>
-
-            <!-- Mobile Menu Toggle -->
-            <div class="lg:hidden">
-                <button onclick="toggleMenu()" class="text-hitsz-blue">
-                    <i class="ri-menu-line text-2xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white">
-            <!-- Mobile menu content would be similar to desktop menu -->
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="pt-24 container mx-auto px-4 lg:px-16 flex flex-col-reverse lg:flex-row items-center">
-        <div class="w-full lg:w-1/2 space-y-6">
-            <h1 class="text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
-                🌟 Your Gateway to HITSZ: <br/>Global Education Starts Here
-            </h1>
-            <p class="text-gray-600 text-lg">
-                Comprehensive admission support for international students seeking world-class education at Harbin Institute of Technology Shenzhen Campus
-            </p>
-            <div class="flex items-center space-x-4">
-                <button onclick="openApplicationModal()" class="bg-hitsz-blue text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+        <!-- Hero Section -->
+        <header class="bg-gradient-to-r from-hitsz-blue to-hitsz-red text-white py-20">
+            <div class="container mx-auto text-center">
+                <h1 class="text-5xl font-bold mb-6">Your Gateway to HITSZ</h1>
+                <p class="text-xl mb-10">Comprehensive Admission Support for International Students</p>
+                <button onclick="navigateTo('application-form.html')" class="bg-white text-hitsz-blue px-8 py-3 rounded-full font-bold hover:bg-gray-100">
                     Start Your Application
                 </button>
             </div>
-        </div>
-        <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
-            <img src="/api/placeholder/500/500" alt="HITSZ Campus" class="rounded-lg shadow-xl"/>
-        </div>
-    </header>
+        </header>
  <!-- Admission Requirements -->
  <section class="container mx-auto px-4 lg:px-16 py-16">
     <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Admission Requirements</h2>
@@ -265,6 +224,24 @@
         </div>
     </section>
 
+    <!-- Key Features -->
+    <section class="container mx-auto py-16 grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <i class="ri-book-open-line text-5xl text-hitsz-blue mb-4"></i>
+            <h3 class="font-bold text-xl mb-2">Program Guidance</h3>
+            <p>Expert advice on selecting the right undergraduate program</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <i class="ri-file-text-line text-5xl text-hitsz-blue mb-4"></i>
+            <h3 class="font-bold text-xl mb-2">Application Support</h3>
+            <p>Comprehensive assistance throughout the application process</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <i class="ri-global-line text-5xl text-hitsz-blue mb-4"></i>
+            <h3 class="font-bold text-xl mb-2">International Admissions</h3>
+            <p>Specialized support for international student applications</p>
+        </div>
+    </section>
     <!-- Scholarship Categories -->
     <section class="container mx-auto px-4 lg:px-16 py-16">
         <h2 class="text-3xl font-bold text-center mb-12">Categories Of Each Scholarship</h2>
@@ -445,42 +422,13 @@
             </div>
         </div>
     </section>
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
-        <div class="container mx-auto px-4 lg:px-16 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <h4 class="font-bold mb-4 text-red-500">Services</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-red-500">Scholarships</a></li>
-                    <li><a href="#" class="hover:text-red-500">Mentorship</a></li>
-                    <li><a href="#" class="hover:text-red-500">Learning Resources</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold mb-4 text-red-500">Information</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-red-500">About Us</a></li>
-                    <li><a href="#" class="hover:text-red-500">FAQ</a></li>
-                    <li><a href="#" class="hover:text-red-500">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold mb-4 text-red-500">Company</h4>
-                <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-red-500">Careers</a></li>
-                    <li><a href="#" class="hover:text-red-500">Blog</a></li>
-                    <li><a href="#" class="hover:text-red-500">Press</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold mb-4 text-red-500">Get In Touch</h4>
-                <p>Email: support@schident.com</p>
-                <p>Phone: +1 (555) 123-4567</p>
-                <div class="mt-4 flex space-x-4">
-                    <a href="#" class="text-white hover:text-red-500"><i class="ri-facebook-line"></i></a>
-                    <a href="#" class="text-white hover:text-red-500"><i class="ri-twitter-line"></i></a>
-                    <a href="#" class="text-white hover:text-red-500"><i class="ri-linkedin-line"></i></a>
-                </div>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 Schident. All Rights Reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-hitsz-blue">Privacy Policy</a>
+                <a href="#" class="hover:text-hitsz-blue">Terms of Service</a>
+                <a href="#" class="hover:text-hitsz-blue">Contact Us</a>
             </div>
         </div>
     </footer>

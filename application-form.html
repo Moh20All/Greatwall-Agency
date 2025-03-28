@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HITSZ Application Form - Schident</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hitsz-blue': '#0066CC',
+                        'hitsz-red': '#CC0000'
+                    }
+                }
+            }
+        }
+
+        function validateForm() {
+            // Basic form validation
+            const requiredFields = document.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.classList.add('border-red-500');
+                    isValid = false;
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+
+            return isValid;
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md p-4">
+        <!-- [Previous Navigation Code] -->
+    </nav>
+
+    <div class="container mx-auto py-16 px-4">
+        <h1 class="text-4xl font-bold text-center mb-12 text-hitsz-blue">HITSZ Undergraduate Application</h1>
+        
+        <form class="bg-white shadow-md rounded-lg p-8 max-w-4xl mx-auto" onsubmit="return validateForm()">
+            <!-- Personal Information -->
+            <div class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-hitsz-blue">Personal Information</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" placeholder="First Name" required class="w-full p-3 border rounded"/>
+                    <input type="text" placeholder="Last Name" required class="w-full p-3 border rounded"/>
+                    <input type="date" placeholder="Date of Birth" required class="w-full p-3 border rounded"/>
+                    <select class="w-full p-3 border rounded" required>
+                        <option value="">Nationality</option>
+                        <!-- Add country options -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-hitsz-blue">Contact Details</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="email" placeholder="Email Address" required class="w-full p-3 border rounded"/>
+                    <input type="tel" placeholder="Phone Number" required class="w-full p-3 border rounded"/>
+                    <input type="text" placeholder="Current Address" required class="w-full p-3 border rounded"/>
+                </div>
+            </div>
+
+            <!-- Academic Information -->
+            <div class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-hitsz-blue">Academic Background</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <select class="w-full p-3 border rounded" required>
+                        <option value="">Preferred Program</option>
+                        <option>Science</option>
+                        <option>Computer Science</option>
+                        <!-- Add more programs -->
+                    </select>
+                    <input type="text" placeholder="Current School/University" required class="w-full p-3 border rounded"/>
+                    <input type="number" placeholder="GPA" step="0.1" required class="w-full p-3 border rounded"/>
+                    <select class="w-full p-3 border rounded" required>
+                        <option value="">English Proficiency</option>
+                        <option>TOEFL</option>
+                        <option>IELTS</option>
+                        <option>Duolingo</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Document Upload -->
+            <div class="mb-8">
+                <h2 class="text-2xl font-semibold mb-4 text-hitsz-blue">Document Upload</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block mb-2">Passport Copy</label>
+                        <input type="file" class="w-full p-3 border rounded"/>
+                    </div>
+                    <div>
+                        <label class="block mb-2">Academic Transcript</label>
+                        <input type="file" class="w-full p-3 border rounded"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="bg-hitsz-red text-white px-12 py-3 rounded-full hover:bg-red-700 transition">
+                    Submit Application
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <!-- [Previous Footer Code] -->
+    </footer>
+</body>
+</html>
